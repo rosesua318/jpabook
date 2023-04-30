@@ -1,6 +1,7 @@
 package jpabook.start;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name="MEMBER")
@@ -14,6 +15,19 @@ public class Member {
 
     // 매핑 정보가 없는 필드
     private Integer age; // 나이
+
+    //== 추가 ==
+    @Enumerated(EnumType.STRING)
+    private RoleType roleType;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastModifiedDate;
+
+    @Lob
+    private String description;
 
     // Getter, Setter
     public String getId() {
@@ -35,5 +49,37 @@ public class Member {
     }
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public RoleType getRoleType() {
+        return roleType;
+    }
+
+    public void setRoleType(RoleType roleType) {
+        this.roleType = roleType;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
