@@ -4,13 +4,15 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="MEMBER")
+@Table(name="MEMBER", uniqueConstraints = {@UniqueConstraint( // 추가
+        name = "NAME_AGE_UNIQUE",
+        columnNames = {"NAME", "AGE"} )})
 public class Member {
     @Id
     @Column(name = "ID")
     private String id; // 아이디
 
-    @Column(name = "NAME")
+    @Column(name = "NAME", nullable = false, length = 10) // 추가
     private String username; // 이름
 
     // 매핑 정보가 없는 필드
