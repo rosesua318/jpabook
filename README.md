@@ -12,3 +12,8 @@
 
 <23년 4월 28일><br>
 3장 영속성 관리 : https://velog.io/@rosesua318/3%EC%9E%A5-%EC%98%81%EC%86%8D%EC%84%B1-%EA%B4%80%EB%A6%AC 
+
+<br>
+
+<23년 5월 4일><br>
+4장 엔티티 매핑 : https://velog.io/@rosesua318/4%EC%9E%A5-%EC%97%94%ED%8B%B0%ED%8B%B0-%EB%A7%A4%ED%95%91 
