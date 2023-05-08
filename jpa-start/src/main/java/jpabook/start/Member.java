@@ -15,6 +15,11 @@ public class Member {
     @Column(name = "NAME", nullable = false, length = 10) // 추가
     private String username; // 이름
 
+    // 연관관계 매핑
+    @ManyToOne
+    @JoinColumn(name="TEAM_ID")
+    private Team team;
+
     // 매핑 정보가 없는 필드
     private Integer age; // 나이
 
