@@ -8,7 +8,7 @@ import java.util.Date;
         name = "NAME_AGE_UNIQUE",
         columnNames = {"NAME", "AGE"} )})
 public class Member {
-    @Id
+    @Id @GeneratedValue
     @Column(name = "ID")
     private String id; // 아이디
 
@@ -19,6 +19,17 @@ public class Member {
     @ManyToOne
     @JoinColumn(name="TEAM_ID")
     private Team team;
+
+    // 연관관계 설정
+    public void setTeam(Team team) {
+        // 기존 팀과 관계를 제거
+        if(this.team != null) {
+            this.team.getMembers().remove(this);
+        }
+
+        this.team = team;
+        team.getMembers().add(this);
+    }
 
     // 매핑 정보가 없는 필드
     private Integer age; // 나이
