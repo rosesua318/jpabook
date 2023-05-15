@@ -17,7 +17,7 @@ public class Member {
 
     // 연관관계 매핑
     @ManyToOne
-    @JoinColumn(name="TEAM_ID")
+    @JoinColumn(name="TEAM_ID", insertable = false, updatable = false)
     private Team team;
 
     // 연관관계 설정
