@@ -14,6 +14,7 @@ public class Team {
 
     //==추가==//
     @OneToMany(mappedBy = "team")
+    @JoinColumn(name = "TEAM_ID") // MEMBER 테이블의 TEAM_ID (FK)
     private List<Member> members = new ArrayList<>();
 
     public List<Member> getMembers() {
