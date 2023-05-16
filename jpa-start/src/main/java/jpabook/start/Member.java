@@ -15,6 +15,10 @@ public class Member {
     @Column(name = "NAME", nullable = false, length = 10) // 추가
     private String username; // 이름
 
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
+
     // 연관관계 매핑
     @ManyToOne
     @JoinColumn(name="TEAM_ID", insertable = false, updatable = false)
