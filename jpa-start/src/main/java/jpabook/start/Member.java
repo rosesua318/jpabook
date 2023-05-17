@@ -1,7 +1,10 @@
 package jpabook.start;
 
 import javax.persistence.*;
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="MEMBER", uniqueConstraints = {@UniqueConstraint( // 추가
@@ -12,8 +15,17 @@ public class Member {
     @Column(name = "ID")
     private String id; // 아이디
 
+    // 역방향
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<Order>();
+
     @Column(name = "NAME", nullable = false, length = 10) // 추가
     private String username; // 이름
+
+    //@ManyToMany
+    //@JoinTable(name = "MEMBER_PRODUCT", joinColumns = @JoinColumn(name = "MEMBER_ID"),
+    //        inverseJoinColumns = @JoinColumn(name = "PRODUCT_ID"))
+    //private List<Product> products = new ArrayList<Product>();
 
     @OneToOne
     @JoinColumn(name = "LOCKER_ID")
