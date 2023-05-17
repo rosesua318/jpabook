@@ -23,3 +23,7 @@
 <23년 5월 11일><br>
 5장 연관관계 매핑 기초 : https://velog.io/@rosesua318/5%EC%9E%A5-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91-%EA%B8%B0%EC%B4%88 
 
+<br>
+
+<23년 5월 18일><br>
+6장 다양한 연관관계 매핑 : https://velog.io/@rosesua318/6%EC%9E%A5-%EB%8B%A4%EC%96%91%ED%95%9C-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91 
