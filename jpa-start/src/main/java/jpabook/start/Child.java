@@ -16,9 +16,9 @@ public class Child {
     //})
     //@JoinColumn(name = "PARENT_ID")
     //@MapsId("parentId") // ChildId.parentId 매핑
-    @ManyToOne
-    @JoinColumn(name = "PARENT_ID")
-    private Parent parent;
+    //@ManyToOne
+    //@JoinColumn(name = "PARENT_ID")
+    //private Parent parent;
 
     //@Id @Column(name = "CHILD_ID")
     //@EmbeddedId
@@ -28,4 +28,9 @@ public class Child {
     private Long id;
 
     private String name;
+
+    //@ManyToOne(optional = false)
+    //@JoinTable(name = "PARENT_CHILD", joinColumns = @JoinColumn(name = "CHILD_ID"),
+                //inverseJoinColumns = @JoinColumn(name = "PARENT_ID"))
+    //private Parent parent;
 }

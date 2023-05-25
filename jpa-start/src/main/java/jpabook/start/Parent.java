@@ -1,6 +1,8 @@
 package jpabook.start;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 //@IdClass(ParentId.class)
@@ -19,4 +21,12 @@ public class Parent {
     @Column(name = "PARENT_ID")
     private ParentId id;
     private String name;
+
+    //@OneToOne
+    //@OneToMany
+    //@OneToMany(mappedBy = "parent")
+    @ManyToMany
+    @JoinTable(name = "PARENT_CHILD", joinColumns = @JoinColumn(name = "PARENT_ID"),
+                        inverseJoinColumns = @JoinColumn(name = "CHILD_ID"))
+    private List<Child> child = new ArrayList<>();
 }
