@@ -32,7 +32,7 @@ public class Member {
     private Locker locker;
 
     // 연관관계 매핑
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="TEAM_ID", insertable = false, updatable = false)
     private Team team;
 
