@@ -16,7 +16,7 @@ public class Member {
     private String id; // 아이디
 
     // 역방향
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
     private List<Order> orders = new ArrayList<Order>();
 
     @Column(name = "NAME", nullable = false, length = 10) // 추가
@@ -32,8 +32,8 @@ public class Member {
     private Locker locker;
 
     // 연관관계 매핑
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="TEAM_ID", insertable = false, updatable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    //@JoinColumn(name="TEAM_ID", insertable = false, updatable = false)
     private Team team;
 
     // 연관관계 설정
