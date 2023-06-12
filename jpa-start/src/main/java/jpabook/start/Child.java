@@ -33,4 +33,6 @@ public class Child {
     //@JoinTable(name = "PARENT_CHILD", joinColumns = @JoinColumn(name = "CHILD_ID"),
                 //inverseJoinColumns = @JoinColumn(name = "PARENT_ID"))
     //private Parent parent;
+    @ManyToOne
+    private Parent parent;
 }
