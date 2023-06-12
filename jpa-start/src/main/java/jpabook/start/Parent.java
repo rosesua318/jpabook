@@ -24,9 +24,9 @@ public class Parent {
 
     //@OneToOne
     //@OneToMany
-    //@OneToMany(mappedBy = "parent")
-    @ManyToMany
-    @JoinTable(name = "PARENT_CHILD", joinColumns = @JoinColumn(name = "PARENT_ID"),
-                        inverseJoinColumns = @JoinColumn(name = "CHILD_ID"))
-    private List<Child> child = new ArrayList<>();
+    @OneToMany(mappedBy = "parent", cascade = CascadeType.PERSIST)
+    //@ManyToMany
+    //@JoinTable(name = "PARENT_CHILD", joinColumns = @JoinColumn(name = "PARENT_ID"),
+                        //inverseJoinColumns = @JoinColumn(name = "CHILD_ID"))
+    private List<Child> childdren = new ArrayList<>();
 }
