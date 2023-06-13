@@ -32,3 +32,8 @@
 
 <23년 5월 25일><br>
 7장 고급 매핑 : https://velog.io/@rosesua318/7%EC%9E%A5-%EA%B3%A0%EA%B8%89-%EB%A7%A4%ED%95%91 
+
+<br>
+
+<23년 6월 13일><br>
+8장 프록시와 연관관계 관리 : https://velog.io/@rosesua318/8%EC%9E%A5-%ED%94%84%EB%A1%9D%EC%8B%9C%EC%99%80-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EA%B4%80%EB%A6%AC
