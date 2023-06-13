@@ -24,7 +24,8 @@ public class Parent {
 
     //@OneToOne
     //@OneToMany
-    @OneToMany(mappedBy = "parent", cascade = CascadeType.PERSIST)
+    //@OneToMany(mappedBy = "parent", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "parent", orphanRemoval = true)
     //@ManyToMany
     //@JoinTable(name = "PARENT_CHILD", joinColumns = @JoinColumn(name = "PARENT_ID"),
                         //inverseJoinColumns = @JoinColumn(name = "CHILD_ID"))
