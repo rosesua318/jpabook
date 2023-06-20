@@ -50,6 +50,22 @@ public class Member {
     // 매핑 정보가 없는 필드
     private Integer age; // 나이
 
+    // 근무 기간
+    //@Temporal(TemporalType.DATE)
+    //java.util.Date startDate;
+    //@Temporal(TemporalType.DATE)
+    //java.util.Date endDate;
+
+    // 집 주소 표현
+    //private String city;
+    //private String street;
+    //private String zipcode;
+
+    @Embedded Period workPeriod; // 근무 기간
+
+    @Embedded Address Address; // 임베디드 타입 포함
+    @Embedded PhoneNumber phoneNumber; // 임베디드 타입 포함
+
     //== 추가 ==
     @Enumerated(EnumType.STRING)
     private RoleType roleType;
