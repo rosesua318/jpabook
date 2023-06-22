@@ -2,9 +2,7 @@ package jpabook.start;
 
 import javax.persistence.*;
 import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Entity
 @Table(name="MEMBER", uniqueConstraints = {@UniqueConstraint( // 추가
@@ -63,8 +61,23 @@ public class Member {
 
     @Embedded Period workPeriod; // 근무 기간
 
-    @Embedded Address Address; // 임베디드 타입 포함
+    //@Embedded Address Address; // 임베디드 타입 포함
     @Embedded PhoneNumber phoneNumber; // 임베디드 타입 포함
+
+    @Embedded
+    private Address homeAddress;
+
+    @ElementCollection
+    @CollectionTable(name = "FAVORITE_FOODS", joinColumns = @JoinColumn(name = "MEMBER_ID"))
+    @Column(name = "FOOD_NAME")
+    private Set<String> favoriteFoods = new HashSet<String>();
+
+    //@ElementCollection
+    //@CollectionTable(name = "ADDRESS", joinColumns = @JoinColumn(name = "MEMBER_ID"))
+    //private List<Address> addressHistory = new ArrayList<Address>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "MEMBER_ID")
+    private List<AddressEntity> addressHistory = new ArrayList<>();
 
     //== 추가 ==
     @Enumerated(EnumType.STRING)
