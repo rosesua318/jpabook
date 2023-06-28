@@ -8,6 +8,10 @@ import java.util.*;
 @Table(name="MEMBER", uniqueConstraints = {@UniqueConstraint( // 추가
         name = "NAME_AGE_UNIQUE",
         columnNames = {"NAME", "AGE"} )})
+@NamedQueries({
+        @NamedQuery(name = "Member.findByUsername", query = "select m from Member m where m.username = :username"),
+        @NamedQuery(name = "Member.count", query = "select count(m) from Member m")
+})
 public class Member {
     @Id @GeneratedValue
     @Column(name = "ID")
@@ -15,10 +19,10 @@ public class Member {
 
     // 역방향
     @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
-    private List<Order> orders = new ArrayList<Order>();
+    private List<Order> orders = new ArrayList<Order>(); // 연관 필드(컬렉션 값 연관 필드)
 
     @Column(name = "NAME", nullable = false, length = 10) // 추가
-    private String username; // 이름
+    private String username; // 상태 필드
 
     //@ManyToMany
     //@JoinTable(name = "MEMBER_PRODUCT", joinColumns = @JoinColumn(name = "MEMBER_ID"),
@@ -32,7 +36,7 @@ public class Member {
     // 연관관계 매핑
     @ManyToOne(fetch = FetchType.EAGER)
     //@JoinColumn(name="TEAM_ID", insertable = false, updatable = false)
-    private Team team;
+    private Team team; // 연관 필드(단일 값 연관 필드)
 
     // 연관관계 설정
     public void setTeam(Team team) {
@@ -46,7 +50,7 @@ public class Member {
     }
 
     // 매핑 정보가 없는 필드
-    private Integer age; // 나이
+    private Integer age; // 상태 필드
 
     // 근무 기간
     //@Temporal(TemporalType.DATE)
