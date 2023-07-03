@@ -5,9 +5,13 @@ import java.sql.Array;
 import java.util.*;
 
 @Entity
+@NamedNativeQuery(name = "Member.memberSQL", query = "SELECT ID, AGE, NAME, TEAM_ID FROM MEMBER WHERE AGE > ?",
+resultClass = Member.class)
 @Table(name="MEMBER", uniqueConstraints = {@UniqueConstraint( // 추가
         name = "NAME_AGE_UNIQUE",
         columnNames = {"NAME", "AGE"} )})
+@SqlResultSetMapping(name = "memberWithOrderCount", entities = {@EntityResult(entityClass = Member.class)},
+columns = {@ColumnResult(name = "ORDER_COUNT")})
 @NamedQueries({
         @NamedQuery(name = "Member.findByUsername", query = "select m from Member m where m.username = :username"),
         @NamedQuery(name = "Member.count", query = "select count(m) from Member m")
