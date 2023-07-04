@@ -38,5 +38,12 @@
 <23년 6월 13일><br>
 8장 프록시와 연관관계 관리 : https://velog.io/@rosesua318/8%EC%9E%A5-%ED%94%84%EB%A1%9D%EC%8B%9C%EC%99%80-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EA%B4%80%EB%A6%AC
 
+<br>
+
 <23년 6월 22일><br>
 9장 값 타입 : https://velog.io/@rosesua318/9%EC%9E%A5-%EA%B0%92-%ED%83%80%EC%9E%85 
+
+<br>
+
+<23년 7월 4일><br>
+10장 객체지향 쿼리 언어 : https://velog.io/@rosesua318/10%EC%9E%A5-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%EC%BF%BC%EB%A6%AC-%EC%96%B8%EC%96%B4 
